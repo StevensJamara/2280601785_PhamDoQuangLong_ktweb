@@ -1,0 +1,33 @@
+﻿@model IEnumerable<_2280601785_PhamDoQuangLong.Models.SinhVien>
+
+@{
+    ViewData["Title"] = "Danh Sách Người Dùng";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>MaSV</th>
+            <th>Họ Tên</th>
+            <th>Giới Tính</th>
+            <th>Ngày Sinh</th>
+            <th>Hình</th>
+            <th>Ma Nganh</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.MaSv</td>
+                <td>@user.HoTen</td>
+                <td>@user.GioiTinh</td>
+                <td>@user.NgaySinh?.ToString("dd/MM/yyyy")</td>
+                <td><img src="@user.Hinh" alt="User Image" style="width:50px;height:50px;" /></td>
+                <td>@user.MaNganh</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,27 @@
+﻿@model IEnumerable<_2280601785_PhamDoQuangLong.Models.HocPhan>
+
+@{
+    ViewData["Title"] = "Danh Sách Học Phần";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>MaHP</th>
+            <th>Tên Học Phần</th>
+            <th>Số Tín Chỉ</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var hocPhan in Model)
+        {
+            <tr>
+                <td>@hocPhan.MaHp</td>
+                <td>@hocPhan.TenHp</td>
+                <td>@hocPhan.SoTinChi</td>
+            </tr>
+        }
+    </tbody>
+</table>
